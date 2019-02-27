@@ -41,4 +41,5 @@ echo "Changing Hostname"
 sed -i -e "s/raspberrypi/$1/g" /etc/hostname
 sed -i -e "s/raspberrypi/$1/g" /etc/hosts
 echo "Installing fail2ban"
+apt install fail2ban
 reboot
