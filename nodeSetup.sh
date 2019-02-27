@@ -19,6 +19,9 @@ echo 'dtparam=spi=on' >> /boot/config.txt
 echo "Downloading LMIC"
 git clone https://github.com/wklenk/lmic-rpi-lora-gps-hat.git
 chown -R pi:pi lmic-rpi-lora-gps-hat
+echo "Downloading Mastercode"
+git clone https://github.com/jp-chickadee-project/MasterCode.git
+chown -R pi:pi MasterCode
 echo "Downloading WiringPi"
 git clone git://git.drogon.net/wiringPi
 chown -R pi:pi wiringPi
