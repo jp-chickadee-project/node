@@ -4,8 +4,7 @@ Setup internet connect first, then run the commands below.
 
 ```
 sudo apt install git
-git clone https://github.com/jonathonlefler/setup.git
-cd ~/setup
+git clone https://github.com/jp-chickadee-project/node.git
 sudo ./nodeSetup.sh node{#}
 ```
  
