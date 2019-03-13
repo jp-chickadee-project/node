@@ -25,6 +25,8 @@ cd /home/pi
 echo "Downloading Mastercode"
 git clone https://github.com/jp-chickadee-project/MasterCode.git
 chown -R pi:pi MasterCode
+echo "Adding MastaCode.py to /etc/rc.local"
+sed -i '$i \python3 /home/pi/MasterCode/mastaCode.py &\n' /etc/rc.local
 echo "Downloading WiringPi"
 git clone git://git.drogon.net/wiringPi
 chown -R pi:pi wiringPi
