@@ -5,6 +5,8 @@ usermod -a -G dialout pi
 cd /home/pi
 echo "Downloading git"
 apt install git
+echo "Enabling push down button"
+echo 'dtoverlay=gpio-shutdown, gpio_pin=3' >> /boot/config.txt
 echo "Installing rpi.gpio"
 apt install rpi.gpio
 echo "Installing pip3"
