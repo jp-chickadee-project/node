@@ -9,6 +9,8 @@ echo "Enabling push down button"
 echo 'dtoverlay=gpio-shutdown, gpio_pin=3' >> /boot/config.txt
 echo "Installing rpi.gpio"
 apt install rpi.gpio
+echo "installing numpy"
+apt install python3-numpy
 echo "Installing pip3"
 apt install python3-pip
 echo "Installing pyserial"
