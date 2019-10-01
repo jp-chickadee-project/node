@@ -1,6 +1,13 @@
 # node
 # nodeSetup.sh
-Setup internet connect first, then run the commands below.
+Setup internet connect first,
+then run
+```
+sudo apt update
+sudo apt upgrade
+```
+
+Then run the commands below.
 
 ```
 sudo apt install git
