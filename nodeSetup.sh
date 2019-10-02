@@ -14,7 +14,8 @@ apt install -y python3-numpy
 echo "Installing pip3"
 apt install -y python3-pip
 echo "Installing pyserial"
-pip3 install -y pyserial
+#pip3 install -y pyserial
+apt-get install -y python3-serial
 echo "Enabling serial UART"
 sed -i -e 's/ console=serial0,115200//g' /boot/cmdline.txt
 echo 'enable_uart=1' >> /boot/config.txt
