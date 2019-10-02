@@ -4,17 +4,17 @@ echo "Adding user pi to dialout"
 usermod -a -G dialout pi
 cd /home/pi
 echo "Downloading git"
-apt install git
+apt install -y git
 echo "Enabling push down button"
 echo 'dtoverlay=gpio-shutdown, gpio_pin=3' >> /boot/config.txt
 echo "Installing rpi.gpio"
 apt install -y rpi.gpio
 echo "installing numpy"
-apt install python3-numpy
+apt install -y python3-numpy
 echo "Installing pip3"
-apt install python3-pip
+apt install -y python3-pip
 echo "Installing pyserial"
-pip3 install pyserial
+pip3 install -y pyserial
 echo "Enabling serial UART"
 sed -i -e 's/ console=serial0,115200//g' /boot/cmdline.txt
 echo 'enable_uart=1' >> /boot/config.txt
@@ -47,5 +47,5 @@ echo "Changing Hostname"
 sed -i -e "s/raspberrypi/$1/g" /etc/hostname
 sed -i -e "s/raspberrypi/$1/g" /etc/hosts
 echo "Installing fail2ban"
-apt install fail2ban
+apt install -y fail2ban
 reboot
