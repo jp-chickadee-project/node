@@ -1,5 +1,7 @@
 #!/bin/bash
-echo "Initializing $1"
+echo "Enter a name for this node [Example name: node1]"
+read -p "---->" name;
+echo "Initializing $name"
 echo "Adding user pi to dialout"
 usermod -a -G dialout pi
 cd /home/pi
@@ -25,7 +27,7 @@ echo "Downloading LMIC"
 git clone https://github.com/jp-chickadee-project/lmic-rpi-lora-gps-hat.git
 chown -R pi:pi lmic-rpi-lora-gps-hat
 cd /home/pi/lmic-rpi-lora-gps-hat.git
-git checkout $1
+git checkout $name
 cd /home/pi
 echo "Downloading Mastercode"
 git clone https://github.com/jp-chickadee-project/MasterCode.git
@@ -45,10 +47,11 @@ systemctl enable ssh
 echo "Changing keyboard layout"
 sed -i -e 's/XKBLAYOUT="gb"/XKBLAYOUT="us"/g' /etc/default/keyboard
 echo "Changing Hostname"
-sed -i -e "s/raspberrypi/$1/g" /etc/hostname
-sed -i -e "s/raspberrypi/$1/g" /etc/hosts
+sed -i -e "s/raspberrypi/$name/g" /etc/hostname
+sed -i -e "s/raspberrypi/$name/g" /etc/hosts
 echo "Installing fail2ban"
 apt install -y fail2ban
+apt install figlet
 cd /home/pi/node
 ./login_setup.sh
 mv brain.service /lib/systemd/system
