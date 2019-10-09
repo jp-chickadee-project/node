@@ -55,4 +55,5 @@ mv brain.service /lib/systemd/system
 systemctl daemon-reload
 systemctl enable brain.service
 shutdown -r +1
+rm /home/pi/node/login_setup.sh
 rm -- $0
