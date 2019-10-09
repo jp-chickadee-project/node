@@ -49,4 +49,10 @@ sed -i -e "s/raspberrypi/$1/g" /etc/hostname
 sed -i -e "s/raspberrypi/$1/g" /etc/hosts
 echo "Installing fail2ban"
 apt install -y fail2ban
-reboot
+cd /home/pi/node
+./login_setup.sh
+mv brain.service /lib/systemd/system
+systemctl daemon-reload
+systemctl enable brain.service
+shutdown -r +1
+rm -- $0
