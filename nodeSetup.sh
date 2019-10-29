@@ -35,13 +35,14 @@ chown -R pi:pi MasterCode
 echo "Adding MastaCode.py to /etc/rc.local"
 sed -i '$i \python3 /home/pi/MasterCode/mastaCode.py &\n' /etc/rc.local
 echo "Downloading WiringPi"
-git clone git://git.drogon.net/wiringPi
-chown -R pi:pi wiringPi
-echo "Installing WiringPi"
-cd /home/pi/wiringPi
-git pull origin
-./build
-cd /home/pi
+#git clone git://git.drogon.net/wiringPi
+#chown -R pi:pi wiringPi
+#echo "Installing WiringPi"
+#cd /home/pi/wiringPi
+#git pull origin
+#./build
+#cd /home/pi
+apt install -y wiringpi
 echo "Enabling SSH."
 systemctl enable ssh
 echo "Changing keyboard layout"
@@ -51,7 +52,7 @@ sed -i -e "s/raspberrypi/$name/g" /etc/hostname
 sed -i -e "s/raspberrypi/$name/g" /etc/hosts
 echo "Installing fail2ban"
 apt install -y fail2ban
-apt install figlet
+apt install -y figlet
 cd /home/pi/node
 ./login_setup.sh
 mv brain.service /lib/systemd/system
