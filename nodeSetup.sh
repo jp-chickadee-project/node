@@ -31,9 +31,12 @@ git checkout $name
 cd /home/pi
 echo "Downloading Mastercode"
 git clone https://github.com/jp-chickadee-project/MasterCode.git
+cd MasterCode
+mkdir transmit backup
+cd ..
 chown -R pi:pi MasterCode
-echo "Adding MastaCode.py to /etc/rc.local"
-sed -i '$i \python3 /home/pi/MasterCode/mastaCode.py &\n' /etc/rc.local
+echo "Adding brain.py to /etc/rc.local"
+sed -i '$i \python3 /home/pi/MasterCode/brain.py &\n' /etc/rc.local
 echo "Downloading WiringPi"
 #git clone git://git.drogon.net/wiringPi
 #chown -R pi:pi wiringPi
