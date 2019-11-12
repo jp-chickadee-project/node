@@ -6,15 +6,15 @@ echo "Adding user pi to dialout"
 usermod -a -G dialout pi
 cd /home/pi
 echo "Downloading git"
-apt install -y git
+apt-get install -y git
 echo "Enabling push down button"
 echo 'dtoverlay=gpio-shutdown, gpio_pin=3' >> /boot/config.txt
 echo "Installing rpi.gpio"
-apt install -y rpi.gpio
+apt-get install -y rpi.gpio
 echo "installing numpy"
-apt install -y python3-numpy
+apt-get install -y python3-numpy
 echo "Installing pip3"
-apt install -y python3-pip
+apt-get install -y python3-pip
 echo "Installing pyserial"
 #pip3 install -y pyserial
 apt-get install -y python3-serial
@@ -45,7 +45,7 @@ echo "Downloading WiringPi"
 #git pull origin
 #./build
 #cd /home/pi
-apt install -y wiringpi
+apt-get install -y wiringpi
 echo "Enabling SSH."
 systemctl enable ssh
 echo "Changing keyboard layout"
@@ -54,8 +54,8 @@ echo "Changing Hostname"
 sed -i -e "s/raspberrypi/$name/g" /etc/hostname
 sed -i -e "s/raspberrypi/$name/g" /etc/hosts
 echo "Installing fail2ban"
-apt install -y fail2ban
-apt install -y figlet
+apt-get install -y fail2ban
+apt-get install -y figlet
 cd /home/pi/node
 ./login_setup.sh
 mv brain.service /lib/systemd/system
