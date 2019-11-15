@@ -1,7 +1,9 @@
 # node
 # nodeSetup.sh
-Setup internet connect first,
-then run
+CHANGE THE PASSWORD FIRST
+then:
+Setup internet
+run
 ```
 sudo apt update
 sudo apt upgrade
