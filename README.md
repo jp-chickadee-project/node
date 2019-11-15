@@ -1,11 +1,14 @@
 # node
 # nodeSetup.sh
-CHANGE THE PASSWORD FIRST with the `passwd`
+Use the most up-to date image for Rasbian lite
+
+CHANGE THE PASSWORD FIRST with the `passwd` command
 
 Setup internet:
 
 `sudo raspi-config`
 
+Make sure the system is updated:
 ```
 sudo apt update
 sudo apt upgrade
