@@ -12,7 +12,7 @@ Then run the commands below.
 ```
 sudo apt install git
 git clone https://github.com/jp-chickadee-project/node.git
-sudo ./nodeSetup.sh
+sudo ./node/nodeSetup.sh
 ```
  
 
